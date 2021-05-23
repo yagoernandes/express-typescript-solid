@@ -1,9 +1,14 @@
-import {Router} from 'express'
+import { Router } from 'express'
+import { createUserController } from './useCases/CreateUser'
 
-const routes = Router()
+const router = Router()
 
-routes.get('/', (req, res) => {
-  return res.json({message: 'Hello world'})
+router.get('/', (request, response) =>{
+	return response.status(201).send('olá')
 })
 
-export default routes
+router.post('/users', (request, response) =>{
+	return createUserController.handle(request, response)
+})
+
+export { router }

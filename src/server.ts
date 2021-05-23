@@ -1,3 +1,3 @@
-import api from './api'
+import { app } from './app'
 
-api.listen(3333)
+app.listen(3333)
